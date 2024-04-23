@@ -27,7 +27,6 @@
   "sideEffects": false,
   "scripts": {
     "build": "next build",
-    "postbuild": "npm run build-sitemap",
     "build-sitemap": "next-sitemap --config next-sitemap.config.mjs",
     "build:analyze": "ANALYZE=true next build",
     "build:docker": "DOCKER=true next build && npm run build-sitemap",
@@ -45,7 +44,7 @@
     "prettier": "prettier -c --write \"**/**\"",
     "pull": "git pull",
     "release": "semantic-release",
-    "start": "next start",
+    "start": "next start --port 3000 --hostname 0.0.0.0",
     "stylelint": "stylelint \"src/**/*.{js,jsx,ts,tsx}\" --fix",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
